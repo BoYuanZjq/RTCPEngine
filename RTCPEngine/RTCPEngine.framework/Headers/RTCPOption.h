@@ -7,24 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum RTCPVideosMode
-{
-    RTCP_Videos_HD = 0,    //* 1280*720 - 1024kbps
-    RTCP_Videos_QHD,       //* 960*540 - 768kbps
-    RTCP_Videos_SD,        //* 640*480 - 512kbps
-    RTCP_Videos_Low        //* 352*288 - 384kbps
-}RTCPVideosMode;
-
-
-typedef enum {
-    RTCP_SCRN_Portrait = 0,
-    RTCP_SCRN_LandscapeRight,
-    RTCP_SCRN_PortraitUpsideDown,
-    RTCP_SCRN_LandscapeLeft,
-    RTCP_SCRN_Auto
-}RTCPScreenOrientation;
-
+#import "RTCCommon.h"
 
 @interface RTCPOption : NSObject
 
@@ -36,16 +19,26 @@ typedef enum {
 + (nonnull RTCPOption *)defaultOption;
 
 /**
- 设置视频分辨率
- 说明：默认为：RTCP_Videos_SD
+ 设置视频质量
+ AnyRTCVideoQuality_Low1 = 0,      // 320*240 - 128kbps
+ AnyRTCVideoQuality_Low2,          // 352*288 - 256kbps
+ AnyRTCVideoQuality_Low3,          // 352*288 - 384kbps
+ AnyRTCVideoQuality_Medium1,       // 640*480 - 384kbps
+ AnyRTCVideoQuality_Medium2,       // 640*480 - 512kbps
+ AnyRTCVideoQuality_Medium3,       // 640*480 - 768kbps
+ AnyRTCVideoQuality_Height1,       // 960*540 - 768kbps
+ AnyRTCVideoQuality_Height2,       // 1280*720 - 1024kbps
+ AnyRTCVideoQuality_Height3,       // 1920*1080 - 2048kbps
+ 
+ 说明:　默认：AnyRTCVideoQuality_Medium2
  */
-@property (nonatomic, assign) RTCPVideosMode videoMode;
+@property (nonatomic, assign) AnyRTCVideoQualityModel videoMode;
 
 /**
  视频方向
- 说明：默认为：RTCP_SCRN_Portrait
+ 说明：默认为：RTC_SCRN_Portrait
  */
-@property (nonatomic, assign) RTCPScreenOrientation orientation;
+@property (nonatomic, assign) RTCScreenOrientation orientation;
 /**
  是否是前置摄像头
  说明：默认前置摄像头
