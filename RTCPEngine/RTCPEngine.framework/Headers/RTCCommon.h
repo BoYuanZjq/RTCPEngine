@@ -206,5 +206,14 @@ typedef enum : char {
     
 } AnyCameraDeviceFilter;
 
+typedef enum {
+    //表示按比例缩放并且填满view，意味着图片可能超出view，可能被裁减掉
+    AnyRTCVideoRenderScaleAspectFill = 0,
+    //表示通过缩放来填满view，也就是说图片会变形
+    AnyRTCVideoRenderScaleToFill,
+    //表示按比例缩放并且图片要完全显示出来，意味着view可能会留有空白
+    AnyRTCVideoRenderScaleAspectFit
+    
+}AnyRTCVideoRenderMode;
 
 #endif	// __RTC_COMMON_H__

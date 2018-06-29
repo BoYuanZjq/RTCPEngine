@@ -27,6 +27,21 @@
 
 #pragma mark Common function
 /**
+ 设置本地视频采集窗口
+ 
+ @param render 视频显示对象
+ 说明：该方法用于本地视频采集。
+ */
+- (void)setLocalVideoCapturer:(UIView*)render;
+/**
+ 设置本地显示模式
+ 
+ @param eVideoRenderMode 显示模式
+ 说明：默认：AnyRTCVideoRenderScaleAspectFill，等比例填充视图模式
+ */
+- (void)setLocalVideoRenderModel:(AnyRTCVideoRenderMode)eVideoRenderMode;
+
+/**
  设置本地音频是否传输
  
  @param bEnable 打开或关闭本地音频
@@ -49,13 +64,7 @@
  说明：默认打开扬声器
  */
 - (void)setSpeakerOn:(bool)bOn;
-/**
- 设置本地视频采集窗口
- 
- @param render 视频显示对象
- 说明：该方法用于本地视频采集。
- */
-- (void)setLocalVideoCapturer:(UIView*)render;
+
 /**
  切换前后摄像头
  说明:切换本地前后摄像头。
@@ -90,11 +99,6 @@
 - (void)unSubscribe:(NSString*)strRtcpId;
 
 /**
- 关闭离开
- */
-- (void)close;
-
-/**
  设置显示其他人的视频窗口
  
  @param strRtcpId RTCP服务生成的通道Id (用于标识通道，每次发布随机生成)；
@@ -102,6 +106,25 @@
  说明：该方法用于订阅成功通后，视频即将显示的回调中（onRTCOpenVideoRender）使用。
  */
 - (void)setRTCVideoRender:(NSString*)strRtcpId andRender:(UIView*)render;
+
+/**
+ 设置其他人显示模式
+ 
+ @param eVideoRenderMode 显示模式
+ 说明：默认：AnyRTCVideoRenderScaleAspectFill，等比例填充视图模式
+ */
+- (void)setRTCVideoRenderModel:(AnyRTCVideoRenderMode)eVideoRenderMode;
+
+/**
+ 更新视图坐标
+ 说明:布局之后，如果更改视图的坐标位置，需要调用该方法，才能正常显示
+ */
+- (void)updateVideoLayOut;
+/**
+ 关闭离开
+ */
+- (void)close;
+
 
 @end
 
