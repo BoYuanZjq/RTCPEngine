@@ -121,6 +121,31 @@
 - (void)close;
 
 
+#pragma mark - 音视频流信息监测
+
+/**
+ 设置音频检测
+ 
+ @param bOn 是否开启音频检测
+ 说明：默认打开
+ */
+- (void)setAudioActiveCheck:(bool)bOn;
+
+/**
+ 设置视频网络状态是否打开
+ 
+ @param bEnable YES:打开;NO:关闭
+ 说明:默认关闭
+ */
+- (void)setNetworkStatus:(BOOL)bEnable;
+
+/**
+ 获取当前视频网络状态是否打开
+ 
+ @return 获取网络视频状态
+ */
+- (BOOL)networkStatusEnabled;
+
 @end
 
 #endif  // RTCPKit_h
