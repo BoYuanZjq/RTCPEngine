@@ -71,6 +71,21 @@
  */
 - (void)switchCamera;
 
+/**
+ 设置本地前置摄像头镜像是否打开
+ 
+ @param bEnable YES为打开，NO为关闭
+ @return 镜像成功与否
+ */
+- (BOOL)setFontCameraMirrorEnable:(BOOL)bEnable;
+
+/**
+ 前置摄像头是否镜像
+
+ @return 是否镜像：默认:YES
+ */
+- (BOOL)fontCameraMirror;
+
 #pragma mark RTCP function for media
 /**
  发布媒体
@@ -130,6 +145,11 @@
  说明：默认打开
  */
 - (void)setAudioActiveCheck:(bool)bOn;
+
+/**
+ 获取音频检测是否打开
+ */
+- (BOOL)audioActiveCheck;
 
 /**
  设置视频网络状态是否打开
