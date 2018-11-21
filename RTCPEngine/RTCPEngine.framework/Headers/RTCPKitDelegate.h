@@ -82,6 +82,24 @@
  */
 - (void)onRTCVideoViewChanged:(UIView*)videoView didChangeVideoSize:(CGSize)size;
 
+#pragma mark - 网络状态和音频检测
+/**
+ 网络状态
+ 
+ @param strRtcpId 通道Id
+ @param nNetSpeed 网络上行
+ @param nPacketLost 丢包率
+ */
+- (void)onRtcNetworkStatus:(NSString*)strRtcpId withNetSpeed:(int)nNetSpeed withPacketLost:(int)nPacketLost;
+/**
+ RTC音频检测
+ 
+ @param strRtcpId 通道Id
+ @param nLevel 音频检测音量；（0~100）
+ @param nTime 音频检测在nTime毫秒内不会再回调该方法（单位：毫秒）；
+ 说明：对方关闭音频后（setLocalAudioEnable为NO）,该回调将不再回调；对方关闭音频检测后（setAudioActiveCheck为NO）,该回调也将不再回调。
+ */
+-(void)onRTCAudioActive:(NSString*)strRtcpId withAudioLevel:(int)nLevel withShowTime:(int)nTime;
 @end
 
 
