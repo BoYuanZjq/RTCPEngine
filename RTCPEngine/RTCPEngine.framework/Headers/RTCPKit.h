@@ -58,6 +58,19 @@
 - (void)setLocalVideoEnable:(bool)bEnable;
 
 /**
+ 获取本地音频传输是否打开
+ 
+ @return 音频传输与否
+ */
+- (BOOL)localAudioEnabled;
+
+/**
+ 获取本地视频传输是否打开
+ 
+ @return 视频传输与否
+ */
+- (BOOL)localVideoEnabled;
+/**
  设置扬声器开关
 
  @param bOn 设置YES,打开扬声器，设置NO,关闭扬声器
