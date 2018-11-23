@@ -23,7 +23,7 @@
  @param option 配置信息
  @return RTCP工具
  */
-- (instancetype)initWithDelegate:(id<RTCPKitDelegate>)delegate withOption:(RTCPOption*)option;
+- (instancetype)initWithDelegate:(id<RTCPKitDelegate>)delegate;
 
 #pragma mark Common function
 /**
@@ -32,7 +32,7 @@
  @param render 视频显示对象
  说明：该方法用于本地视频采集。
  */
-- (void)setLocalVideoCapturer:(UIView*)render;
+- (void)setLocalVideoCapturer:(UIView*)render withOption:(RTCPOption*)option;
 /**
  设置本地显示模式
  

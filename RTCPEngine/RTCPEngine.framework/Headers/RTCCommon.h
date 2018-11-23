@@ -228,6 +228,12 @@ typedef enum {
     
 }AnyRTCVideoRenderMode;
 
-
+// 日志级别
+typedef enum {
+    AnyRTCLogModelNone = 0,
+    AnyRTCLogModelInfo,
+    AnyRTCLogModelWarning,
+    AnyRTCLogModelError
+}AnyRTCLogModel;
 
 #endif	// __RTC_COMMON_H__

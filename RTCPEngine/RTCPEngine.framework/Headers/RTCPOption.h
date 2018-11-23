@@ -38,7 +38,13 @@
  视频方向
  说明：默认为：RTC_SCRN_Portrait
  */
-@property (nonatomic, assign) RTCScreenOrientation orientation;
+@property (nonatomic, assign) RTCScreenOrientation videoScreenOrientation;
+
+/**
+ 自动旋转：默认为NO
+ 说明:设置为YES；这里只支持 left 变 right  portrait 变 portraitUpsideDown
+ */
+@property (nonatomic, assign) BOOL autorotate;
 /**
  是否是前置摄像头
  说明：默认前置摄像头

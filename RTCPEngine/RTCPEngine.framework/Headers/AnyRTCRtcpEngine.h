@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RTCCommon.h"
 
 @interface AnyRTCRtcpEngine : NSObject
 /**
@@ -34,5 +35,13 @@
  @return 版本号
  */
 + (NSString*)getSdkVersion;
+
+/**
+ 设置打印日志级别
+ 
+ @levelModel 日志级别
+ */
+
++ (void)setLogLevel:(AnyRTCLogModel)levelModel;
 
 @end
