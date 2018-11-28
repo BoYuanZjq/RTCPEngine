@@ -68,7 +68,7 @@
 /**
  远程视频第一针
  
- @param videoView 本地视频
+ @param videoView 远程视频
  @param size 视频窗口大小
  */
 -(void)onRTCFirstRemoteVideoFrame:(UIView*)videoView videoSize:(CGSize)size;

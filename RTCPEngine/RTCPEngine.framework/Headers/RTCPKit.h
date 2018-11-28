@@ -20,7 +20,6 @@
  初始化
 
  @param delegate RTCP相关回调代理
- @param option 配置信息
  @return RTCP工具
  */
 - (instancetype)initWithDelegate:(id<RTCPKitDelegate>)delegate;
