@@ -11,6 +11,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ARRtcpEnum.h"
+#import <AVFoundation/AVFoundation.h>
 
 @protocol ARRtcpKitDelegate <NSObject>
 
@@ -147,6 +148,16 @@
  @param netQuality 网络质量
  */
 - (void)onRTCLocalNetworkStatus:(int)netSpeed packetLost:(int)packetLost netQuality:(ARNetQuality)netQuality;
+
+#pragma mark -  video data
+/**
+ 获取视频的原始采集数据
+ 
+ @param sampleBuffer 视频数据
+ @return 视频对象（处理过或者没做处理）
+ */
+- (CVPixelBufferRef)onRTCCaptureVideoPixelBuffer:(CMSampleBufferRef)sampleBuffer;
+
 
 @end
 

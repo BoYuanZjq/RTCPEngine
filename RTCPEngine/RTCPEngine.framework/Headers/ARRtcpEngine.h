@@ -20,9 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
  说明：该方法为配置开发者信息，上述参数均可在https://www.anyrtc.io/应用管理中获得，建议在AppDelegate.m调用。
  */
 + (void)initEngine:(NSString *)appId token:(NSString *)token;
-
-+ (void)initEngine:(NSString *)appId token:(NSString *)token key:(NSString*)key developerId:(NSString*)developerId;
-
 /**
  配置私有云
  
