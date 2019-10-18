@@ -28,6 +28,23 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Common function
 
 /**
+监听房间
+
+@param roomId 房间号
+说明:
+ -监听房间号，用户发布取消发布的回调可以监听到
+ -可以监听多个房间
+*/
+- (void)listen:(NSString*)roomId;
+/**
+取消监听房间
+
+@param roomId 房间号
+说明:取消监听房间号，用户发布取消发布的回调不在回掉
+*/
+- (void)unListen:(NSString*)roomId;
+
+/**
  设置本地视频采集窗口
  
  @param render 视频显示对象
@@ -120,9 +137,10 @@ NS_ASSUME_NONNULL_BEGIN
  发布媒体
  
  @param token 令牌:客户端向自己服务申请获得，参考企业级安全指南
+ @param roomId 令牌:客户端向自己服务申请获得，参考企业级安全指南
  @param type 0为发布音视频，1为只发布音频
  */
-- (void)publishByToken:(NSString*_Nullable)token mediaType:(ARMediaType)type;
+- (void)publishByToken:(NSString*_Nullable)token roomId:(NSString*)roomId mediaType:(ARMediaType)type;
 
 /**
  取消发布媒体
