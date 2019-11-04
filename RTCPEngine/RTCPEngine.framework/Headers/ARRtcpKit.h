@@ -137,10 +137,11 @@ NS_ASSUME_NONNULL_BEGIN
  发布媒体
  
  @param token 令牌:客户端向自己服务申请获得，参考企业级安全指南
- @param roomId 令牌:客户端向自己服务申请获得，参考企业级安全指南
+ @param roomId 房间号
  @param type 0为发布音视频，1为只发布音频
+ @param live NO:服务端不转直播;YES:服务端转直播;（使用该功能需联系客服开通）
  */
-- (void)publishByToken:(NSString*_Nullable)token roomId:(NSString*)roomId mediaType:(ARMediaType)type;
+- (void)publishByToken:(NSString*_Nullable)token roomId:(NSString*)roomId mediaType:(ARMediaType)type isLive:(BOOL)live;
 
 /**
  取消发布媒体
