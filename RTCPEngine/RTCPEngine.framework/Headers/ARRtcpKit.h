@@ -99,6 +99,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)switchCamera;
 
 /**
+截图功能
+
+@param pubId 发布流Id
+@param block 数据回调
+*/
+- (void)snapPicture:(NSString*)pubId complete:(ScreenshotsBlock)block;
+
+/**
  设置本地前置摄像头镜像是否打开
  
  @param enable YES为打开，NO为关闭
